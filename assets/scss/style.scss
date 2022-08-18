@@ -1,0 +1,243 @@
+@import './abstracts/variables';
+@import './mixins/breakpoints';
+@import './mixins/functions';
+@import './abstracts/common';
+@import './abstracts/buttons';
+@import './abstracts/icons';
+@import './includes/header';
+@import './includes/footer';
+
+// ========= Start : Banner Section ==========
+// ===========================================
+
+.hero-section {
+    padding-top: 60px;
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        opacity: .1;
+        width: 50%;
+        background: $common-blue;
+    }
+    span {
+        letter-spacing: 3px;
+    }
+    h1{
+        font-size: 50px;
+        @include media-min-sm{
+            font-size: 50px;
+            letter-spacing: 3px;
+        }
+    }
+    .mouse{
+        .m-icon{
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            &::after{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                content: '';
+                background: linear-gradient(to top right, transparent 0%, transparent 50%, $overlay-blue 50%, $overlay-blue 100%);
+                z-index: -1;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+            .down-to-resume{
+                i{
+                    animation: toptobtm 2s infinite;
+                }
+                @keyframes toptobtm {
+                    0% {
+                        margin-top: 0%;
+                    }
+                    100% {
+                        margin-top: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ========= Start : About Section ==========
+// ===========================================
+
+.about-section{
+    .about-img{
+        background: url('../../public/images/my-image.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        @include media-max-lg{
+            margin-top: 20px;
+            height: 600px;
+        }
+    }
+
+    .about-info{
+        li{
+            line-height: 40px;
+            span{
+                &:nth-child(1){
+                    width: 130px !important;
+                }
+            }
+        }
+    }
+}
+
+
+// ========= Start : Resume Section ==========
+// ===========================================
+.resume-section{
+    #resume-navbar{
+        .active{
+            position: relative;
+            background: transparent !important;
+            color: $common-blue !important;
+            margin-left: 15px;
+            padding-left: 25px;
+            &::after{
+                position: absolute;
+                top: 50%;
+                left: -10px;
+                width: 20px;
+                height: 2px;
+                content: '';
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                background: $common-blue;
+            }
+        }
+        a{
+            font-weight: 600;
+        }
+    }
+    .w-calc{
+        width: -webkit-calc(100% - 50px);
+        width:    -moz-calc(100% - 50px);
+        width:         calc(100% - 50px);
+    }
+    .scrollto{
+        ul{
+            list-style: none;
+            li{
+                &::before{
+                    content: "\f068"; /* FontAwesome Unicode */
+                    font-family: FontAwesome;
+                    display: inline-block;
+                    margin-left: -1.3em; /* same as padding-left set on li */
+                    width: 1.3em;
+                }
+            }
+        }
+    }
+    #resume-navbar{
+        position: sticky;
+        top: 180px;
+    }
+    .progress{
+        height: 10px !important;
+        .progress-bar{
+            background-color: $common-blue !important;
+        }
+    }
+}
+// ========= End : Resume Section ==========
+// ===========================================
+
+// ========= Start : Service Section ==========
+// ===========================================
+
+.service{
+    .service-box{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        &:hover{
+            background-color: $common-blue !important;
+            color: white !important;
+            i,p{
+                color: white !important;
+            }
+        }
+        h6{
+            position: relative;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            &::after{
+                position: absolute;
+                content: '';
+                bottom: -8px;
+                left: 0;
+                right: 0;
+                width: 40px;
+                height: 2px;
+                background: $common-blue;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+// ========= End : Service Section ==========
+// ===========================================
+
+// ========= Start : Blog Section ==========
+// ===========================================
+
+.blog-section{
+    background: url('../../public/images/blog-bg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center;
+    z-index: 0;
+    padding: 7rem 0;
+    .overlay{
+        &::after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -3;
+            bottom: 0;
+            content: '';
+            background-color: $common-blue;
+            opacity: .6;
+        }
+    }
+}
+
+// ========= End : Blog Section ==========
+// ===========================================
+
+// ========= Start : Contact Section ==========
+// ===========================================
+
+.contact-section{
+    .card{
+        border: none;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+    
+    .contact-form{
+        input{
+            padding: 0.35rem 0.75rem !important;
+            height: 52px;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.image-icon{
+    width: 50px;
+    height: 50px;
+    background-color: $common-blue;
+    border-radius: 50%;
+}
+.service-icon{
+    i{
+        font-size: 30px;
+        color: $common-blue;
+    }
+}
+
+.contact-icon{
+    width: 80px;
+    height: 80px;
+    background: $common-blue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        color: white;
+        font-size: 25px;
+    }
+}

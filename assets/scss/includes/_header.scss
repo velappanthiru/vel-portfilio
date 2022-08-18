@@ -1,0 +1,45 @@
+header{
+   
+    nav{
+        @include media-max-lg {
+            background-color: #000000 !important;
+        }
+        .navbar-toggler{
+            &:focus{
+                box-shadow: none !important;
+            }
+        }
+        ul{
+            @include media-max-lg {
+                position: fixed;
+                left: 0;
+                right: 0;
+                background-color: #000000;
+            }
+            .active{
+                color: $common-blue !important;
+                span{
+                    border-bottom: 2px solid $common-blue !important;
+                }
+            }
+            li{ 
+                a{
+                    padding-left: 25px !important;
+                    padding-right: 25px !important;
+                    color: #000000 !important;
+                    @include media-max-lg {
+                        color: white !important;
+                        padding: 10px 15px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .scroll-shadow{
+        @include media-min-lg{
+            background-color: white !important;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.10);
+        }
+    }
+}
